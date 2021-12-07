@@ -14,8 +14,10 @@ DateData$Time <- strptime(DateData$Time, format="%H:%M:%S")
 DateData[1:1440,"Time"] <- format(DateData[1:1440,"Time"],"2007-02-01 %H:%M:%S")
 DateData[1441:2880,"Time"] <- format(DateData[1441:2880,"Time"],"2007-02-02 %H:%M:%S")
 
-
+png(file="Plot 2.png")
 # calling the basic plot function
 plot(DateData$Time,as.numeric(as.character(DateData$Global_active_power)),
      type="l",xlab="",main = "Global Active Power VS Time",
      ylab="Global Active Power (kilowatts)") 
+
+dev.off()

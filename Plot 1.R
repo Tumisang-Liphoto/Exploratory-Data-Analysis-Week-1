@@ -7,7 +7,11 @@ DateData <- subset(dataDF , dataDF$Date == "1/2/2007" | dataDF$Date == "2/2/2007
 head(DateData)
 dim(DateData)
 
+
+png(file="Plot 1.png")
+
 #create histogram
 hist(as.numeric(as.character(DateData$Global_active_power)),
      col = "red", main = "Global Active Power", 
      xlab = "Global Active Power (kilowatts)")
+dev.off()
